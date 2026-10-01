@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="miContenedor" prefHeight="650.0" prefWidth="1180.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pe.edu.upeu.fsocietysys.controller.CompraController">
+    <children>
+        <VBox layoutX="14.0" layoutY="14.0" spacing="12.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+            <children>
+                <HBox alignment="CENTER_LEFT" spacing="15.0">
+                    <children>
+                        <Label text="Registro de Compras de Mercadería — TechStore">
+                            <font>
+                                <Font name="System Bold" size="22.0" />
+                            </font>
+                        </Label>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Label text="Tipo Comprobante:" />
+                        <ComboBox fx:id="cbxTipoDoc" prefWidth="140.0" />
+                    </children>
+                    <padding>
+                        <Insets bottom="5.0" />
+                    </padding>
+                </HBox>
+                
+                <!-- Panel de selección: Proveedor y Producto -->
+                <HBox spacing="15.0" style="-fx-background-color: #f8f9fa; -fx-padding: 12; -fx-border-color: #dee2e6; -fx-border-radius: 6; -fx-background-radius: 6;">
+                    <children>
+                        <VBox spacing="5.0" HBox.hgrow="ALWAYS">
+                            <children>
+                                <Label text="Proveedor Mayorista:" style="-fx-font-weight: bold;" />
+                                <ComboBox fx:id="cbxProveedor" maxWidth="1.7976931348623157E308" promptText="Seleccionar proveedor" />
+                            </children>
+                        </VBox>
+                        <VBox spacing="5.0" HBox.hgrow="ALWAYS">
+                            <children>
+                                <Label text="Producto a Abastecer:" style="-fx-font-weight: bold;" />
+                                <ComboBox fx:id="cbxProducto" maxWidth="1.7976931348623157E308" promptText="Seleccionar producto" />
+                            </children>
+                        </VBox>
+                        <VBox spacing="5.0" prefWidth="130.0">
+                            <children>
+                                <Label text="P. Compra Unit. (S/):" style="-fx-font-weight: bold;" />
+                                <TextField fx:id="txtPrecioUnit" promptText="0.00" />
+                            </children>
+                        </VBox>
+                        <VBox spacing="5.0" prefWidth="90.0">
+                            <children>
+                                <Label text="Cantidad:" style="-fx-font-weight: bold;" />
+                                <TextField fx:id="txtCantidad" promptText="1" />
+                            </children>
+                        </VBox>
+                        <VBox alignment="BOTTOM_CENTER" spacing="5.0">
+                            <children>
+                                <Button mnemonicParsing="false" onAction="#agregarAlCarrito" styleClass="btn, btn-primary" text="+ Agregar a Compra" />
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+                
+                <Label fx:id="lbnMsg" />
+
+                <!-- Carrito de Compras actual y Totales -->
+                <HBox spacing="15.0" VBox.vgrow="ALWAYS">
+                    <children>
+                        <VBox spacing="8.0" HBox.hgrow="ALWAYS">
+                            <children>
+                                <Label text="Detalle de la Orden de Compra" style="-fx-font-weight: bold; -fx-font-size: 14px;" />
+                                <TableView fx:id="tableCarrito" prefHeight="220.0" VBox.vgrow="ALWAYS" />
+                            </children>
+                        </VBox>
+                        <VBox prefWidth="280.0" spacing="12.0" style="-fx-background-color: #ffffff; -fx-padding: 15; -fx-border-color: #dee2e6; -fx-border-radius: 6; -fx-background-radius: 6;">
+                            <children>
+                                <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Resumen de Compra" style="-fx-font-weight: bold; -fx-font-size: 16px;" />
+                                <Separator />
+                                <HBox>
+                                    <children>
+                                        <Label text="Subtotal:" />
+                                        <Region HBox.hgrow="ALWAYS" />
+                                        <Label fx:id="lblSubtotal" text="S/ 0.00" style="-fx-font-weight: bold;" />
+                                    </children>
+                                </HBox>
+                                <HBox>
+                                    <children>
+                                        <Label text="I.G.V. (18%):" />
+                                        <Region HBox.hgrow="ALWAYS" />
+                                        <Label fx:id="lblIgv" text="S/ 0.00" style="-fx-font-weight: bold;" />
+                                    </children>
+                                </HBox>
+                                <Separator />
+                                <HBox>
+                                    <children>
+                                        <Label text="TOTAL COMPRA:" style="-fx-font-size: 15px; -fx-font-weight: bold;" />
+                                        <Region HBox.hgrow="ALWAYS" />
+                                        <Label fx:id="lblTotal" text="S/ 0.00" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #0d6efd;" />
+                                    </children>
+                                </HBox>
+                                <Region VBox.vgrow="ALWAYS" />
+                                <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#registrarCompra" styleClass="btn, btn-primary" text="Procesar Compra" style="-fx-font-size: 16px; -fx-padding: 10;" />
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+
+                <!-- Historial de Compras -->
+                <VBox spacing="6.0" prefHeight="180.0">
+                    <children>
+                        <Label text="Compras Realizadas (Stock Ingresado)" style="-fx-font-weight: bold; -fx-font-size: 13px;" />
+                        <TableView fx:id="tableHistorial" prefHeight="150.0" VBox.vgrow="ALWAYS" />
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

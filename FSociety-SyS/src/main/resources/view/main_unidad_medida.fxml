@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="miContenedor" prefHeight="550.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pe.edu.upeu.fsocietysys.controller.UnidadMedidaController">
+    <children>
+        <VBox layoutX="14.0" layoutY="14.0" spacing="10.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+            <children>
+                <HBox alignment="CENTER_LEFT" spacing="15.0">
+                    <children>
+                        <Label text="Unidades de Medida">
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                        </Label>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Label text="Filtrar:" />
+                        <TextField fx:id="txtFiltroDato" prefHeight="28.0" prefWidth="220.0" promptText="Buscar unidad..." />
+                        <Button mnemonicParsing="false" onAction="#listar" styleClass="btn, btn-primary" text="Actualizar" />
+                    </children>
+                    <padding>
+                        <Insets bottom="5.0" top="5.0" />
+                    </padding>
+                </HBox>
+                <HBox spacing="15.0" VBox.vgrow="ALWAYS">
+                    <children>
+                        <VBox prefWidth="320.0" spacing="10.0">
+                            <children>
+                                <Label alignment="CENTER" maxWidth="1.7976931348623157E308" style="-fx-background-color: #212529; -fx-text-fill: white; -fx-padding: 8; -fx-background-radius: 4;" text="Nueva / Editar Unidad">
+                                    <font>
+                                        <Font name="System Bold" size="13.0" />
+                                    </font>
+                                </Label>
+                                <VBox spacing="8.0">
+                                    <children>
+                                        <Label text="Nombre de la Unidad:" />
+                                        <TextField fx:id="txtNombreMedida" promptText="Ej. Unidad, Caja, Kit, etc." />
+                                        <HBox alignment="CENTER" spacing="10.0">
+                                            <children>
+                                                <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#validarFormulario" styleClass="btn, btn-primary" text="Guardar" HBox.hgrow="ALWAYS" />
+                                                <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#clearForm" styleClass="btn, btn-danger" text="Cancelar" HBox.hgrow="ALWAYS" />
+                                            </children>
+                                            <VBox.margin>
+                                                <Insets top="10.0" />
+                                            </VBox.margin>
+                                        </HBox>
+                                    </children>
+                                </VBox>
+                                <Label fx:id="lbnMsg" alignment="TOP_LEFT" maxWidth="1.7976931348623157E308" wrapText="true" VBox.vgrow="ALWAYS" />
+                            </children>
+                            <padding>
+                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                            </padding>
+                        </VBox>
+                        <VBox spacing="10.0" HBox.hgrow="ALWAYS">
+                            <children>
+                                <TableView fx:id="tableView" prefHeight="440.0" VBox.vgrow="ALWAYS" />
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>
