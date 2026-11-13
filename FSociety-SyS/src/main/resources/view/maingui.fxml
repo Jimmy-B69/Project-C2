@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="bp" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pe.edu.upeu.fsocietysys.controller.MainguiController">
+   <top>
+      <MenuBar fx:id="menuBar" BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Sistema">
+            <items>
+                <MenuItem fx:id="miSalir" mnemonicParsing="false" text="Salir" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Catálogos">
+            <items>
+                <MenuItem fx:id="miProductos" mnemonicParsing="false" text="Adm. Productos" />
+                <SeparatorMenuItem mnemonicParsing="false" />
+                <MenuItem fx:id="miCategorias" mnemonicParsing="false" text="Categorías" />
+                <MenuItem fx:id="miMarcas" mnemonicParsing="false" text="Marcas" />
+                <MenuItem fx:id="miUnidades" mnemonicParsing="false" text="Unidades de Medida" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Comercial">
+            <items>
+                <MenuItem fx:id="miVentas" mnemonicParsing="false" text="Punto de Venta" />
+                <MenuItem fx:id="miCompras" mnemonicParsing="false" text="Registro de Compras" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Contactos">
+            <items>
+                <MenuItem fx:id="miClientes" mnemonicParsing="false" text="Clientes" />
+                <MenuItem fx:id="miProveedores" mnemonicParsing="false" text="Proveedores" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Seguridad">
+            <items>
+                <MenuItem fx:id="miUsuarios" mnemonicParsing="false" text="Gestión de Usuarios" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <TabPane fx:id="tabPane" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="ALL_TABS" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>
